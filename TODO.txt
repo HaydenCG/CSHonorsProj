@@ -1,1 +1,6 @@
- https://docs.google.com/spreadsheets/d/178o8U97P2cpb0RZbZBvGIoX4bPhUm_lPczg6elfIj9s/edit?gid=1572658771#gid=1572658771
+ https://docs.google.com/spreadsheets/d/178o8U97P2cpb0RZbZBvGIoX4bPhUm_lPczg6elfIj9s/edit?gid=1572658771#gid=1572658771 
+- Desktop Application
+- Runs on MHWilds open //not neccessary
+- Attempts to update spreadsheets when applicable
+- Asks about weapon specification
+- Find out how to resolve the armor and weapon prefabs to images or models to use 
