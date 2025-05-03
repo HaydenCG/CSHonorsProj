@@ -22,6 +22,7 @@ def weaponMaterialLookup(weapon):
     #find items for weapon
     #run monsterDropLookup on items
     #for testing, return names of all monsters required
+weaponType = input("[[DESIRED WEAPON?]]")
 desiredWeapon = input("[[INPUT DESIRED GREATSWORD]]\n")
 
 weaponMaterialLookup(desiredWeapon)

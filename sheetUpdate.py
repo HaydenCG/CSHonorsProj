@@ -16,7 +16,8 @@ sheet_gids = {
     "Insect Glaive Crafting Recipes": "2085009326",
     "Bow Crafting Recipes": "795181790",
     "Heavy Bowgun Crafting Recipes": "1342559614",
-    "Light Bowgun Crafting Recipes": "904336956"
+    "Light Bowgun Crafting Recipes": "904336956",
+    "Armor Crafting Recipes": "1357084566"
 }
 
 os.makedirs("MHWildsCSV", exist_ok=True)
@@ -45,5 +46,5 @@ for name, gid in sheet_gids.items():
         f.write(response.content)
     print(f"Updated: MHWildsCSV/{name}.csv")
     
-print("Done Checking Content!\n")
+print("Done Checking Content!")
 print("[Starting Application...]")

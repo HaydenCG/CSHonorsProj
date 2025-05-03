@@ -1,6 +1,19 @@
  https://docs.google.com/spreadsheets/d/178o8U97P2cpb0RZbZBvGIoX4bPhUm_lPczg6elfIj9s/edit?gid=1572658771#gid=1572658771 
+https://github.com/KhamisiKibet/QT-PyQt-PySide-Custom-Widgets?tab=readme-ov-file - source for ui builder
 - Desktop Application
 - Runs on MHWilds open //not neccessary
 - Attempts to update spreadsheets when applicable
 - Asks about weapon specification
 - Find out how to resolve the armor and weapon prefabs to images or models to use 
+
+
+
+For weapons:
+-search by:
+-skill
+-name
+-sharpness
+-attack
+:all are fields that require the inputted filters when written
+
+rather than searching all terms at once, sequentially search to redult possible runtime
