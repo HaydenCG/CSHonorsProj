@@ -17,7 +17,9 @@ sheet_gids = {
     "Bow Crafting Recipes": "795181790",
     "Heavy Bowgun Crafting Recipes": "1342559614",
     "Light Bowgun Crafting Recipes": "904336956",
-    "Armor Crafting Recipes": "1357084566"
+    "Armor Crafting Recipes": "1357084566",
+    "Large Monster Drops": "1288744951",
+    "Gatherable Items": "1401660839"
 }
 
 os.makedirs("MHWildsCSV", exist_ok=True)

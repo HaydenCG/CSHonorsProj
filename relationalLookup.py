@@ -5,7 +5,7 @@ import pandas as pd
 
 def monsterDropLookup(item): #returns rows where item matches
     
-    dropDF = pd.read_csv("MHWildsCSV\Monster Hunter WildsDataSetCopy - Monster Drops.csv")
+    dropDF = pd.read_csv("MHWildsCSV//Large Monster Drops.csv")
     #print(df.iloc[0])  # Access first row
             
 
@@ -23,7 +23,7 @@ def monsterDropLookup(item): #returns rows where item matches
 
 def nonMonsterDropLookup(item):#returns non monster part in case of monster drop failure
     
-    itemDF = pd.read_csv("MHWildsCSV\Monster Hunter WildsDataSetCopy - Items.csv")
+    itemDF = pd.read_csv("MHWildsCSV/Gatherable Items.csv")
     itemColumnName = "Name"
     
     matching_rows = itemDF[itemDF[itemColumnName] == item] #if item in Name == item

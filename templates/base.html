@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dropdown + Slots + Third Panel</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@latest/css/sb-admin-2.min.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+  <div id="wrapper">
+
+    <ul class="navbar-nav sidebar sidebar-dark bg-dark accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-text mx-3">MHWilds Build Creator</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span>Build Creator</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content" class="p-4">
+        <div class="container-fluid">
+          <h1 class="h3 mb-4 text-gray-800">Dropdown & Slots</h1>
+
+          <div class="row">
+
+            <div class="col-md-4 mb-4">
+              <div class="card shadow h-100">
+                <div class="card-header">
+                  <h6 class="m-0 font-weight-bold text-primary">Weapon</h6>
+                </div>
+                <div class="card-body">
+                  <select class="form-control mb-3" id="dropdown">
+                    <option disabled selected>Select one...</option>
+                    <option>Greatsword</option>
+                    <option>Longsword</option>
+                    <option>Sword and Shield</option>
+                    <option>Dual Blades</option>
+                    <option>Lance</option>
+                    <option>Gunlance</option>
+                    <option>Hammer</option>
+                    <option>Hunting Horn</option>
+                    <option>Switch Axe</option>
+                    <option>Charge Blade</option>
+                    <option>Insect Glaive</option>
+                    <option>Light Bowgun</option>
+                    <option>Heavy Bowgun</option>
+                    <option>Bow</option>
+                  </select>
+
+                  <div id="autofillContainer" style="display:none;">
+                    <input type="text" id="searchBox" class="form-control mt-3" placeholder="Start typing..." />
+                    <div id="suggestions" class="mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card shadow h-100">
+                <div class="card-header">
+                  <h6 class="m-0 font-weight-bold text-primary">Current Loadout</h6>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-column gap-2">
+                    {% for i in range(7) %}
+                    <div class="border p-3 rounded mb-2 text-center bg-light slot-box" style="cursor:pointer;">
+                      Slot {{ i + 1 }}
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card shadow h-100">
+                <div class="card-header">
+                  <h6 class="m-0 font-weight-bold text-primary">Current Armor/ Weapon Skills</h6>
+                </div>
+                <div class="card-body">
+                  <p class="text-muted">Skill List</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing/jquery.easing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@latest/js/sb-admin-2.min.js"></script>
+
+  <script>
+    const suggestions = [
+      "Apple", "Apricot", "Avocado", "Banana", "Blueberry",
+      "Cherry", "Coconut", "Date", "Dragonfruit", "Fig", "Grape"
+    ];
+
+    const dropdown = document.getElementById("dropdown");
+    const searchBox = document.getElementById("searchBox");
+    const suggestionsBox = document.getElementById("suggestions");
+    const autofillContainer = document.getElementById("autofillContainer");
+
+    dropdown.addEventListener("change", () => {
+      autofillContainer.style.display = "block";
+      searchBox.value = "";
+      suggestionsBox.innerHTML = "";
+      searchBox.focus();
+    });
+
+    searchBox.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const matches = suggestions.filter(item => item.toLowerCase().includes(query));
+
+      suggestionsBox.innerHTML = matches.length
+        ? matches.map(item =>
+            `<div class="border p-2 rounded mb-1 bg-light suggestion-item" style="cursor:pointer;">${item}</div>`
+          ).join("")
+        : "<small class='text-muted'>No matches found.</small>";
+
+      document.querySelectorAll(".suggestion-item").forEach(elem => {
+        elem.addEventListener("click", () => {
+          searchBox.value = elem.textContent;
+          suggestionsBox.innerHTML = "";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

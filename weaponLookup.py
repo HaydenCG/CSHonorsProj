@@ -4,7 +4,7 @@ from relationalLookup import *
 #Find method to efficiently look up weapon type first
 
 def weaponMaterialLookup(weapon):
-    weaponDF = pd.read_csv("MHWildsCSV\Monster Hunter WildsDataSetCopy - Great Sword Recipes.csv")
+    weaponDF = pd.read_csv("MHWildsCSV//Greatsword Crafting Recipes.csv")
 
     column_name = "Name"
 
