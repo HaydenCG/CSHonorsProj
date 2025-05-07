@@ -1,6 +1,6 @@
 import pandas as pd
 
-armorDF = pd.read_csv("MHWildsCSV//Armor Crafting Recipes.csv")
+armorDF = pd.read_csv("MHWildsCSV/rawCSV/Armor Crafting Recipes.csv")
 
 def armorSkillLookup(skill, piece):
     skill_columns = ["Skill 1", "Skill 2", "Skill 3"]

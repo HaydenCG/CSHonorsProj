@@ -17,3 +17,65 @@ For weapons:
 :all are fields that require the inputted filters when written
 
 rather than searching all terms at once, sequentially search to redult possible runtime
+
+
+-in weapon dropdown, users can either enter specific weapons, or queue properties about it:
+take string from input and send to backend to remove commas and query each item indivudally
+returns a selection of all found weapons and their statistics, once clicked, is added to build in slot1, replacing prior
+
+---------
+for weapon autofill:
+    on csvUpdate
+
+
+
+
+---------
+for build manager + skill display, after each equipment addition and removal, recalculate each skill total
+ex: someone adds Jin Dahaad boots for agitator, raises skill to lvl 5 but effectively has 6
+    UI would display Agitator: [Level 6/5]: Over cap
+
+    Build a dictionary to compile build information
+For each skill in  specificWeapon.skills, 
+
+
+
+autofill monsters and weapon names in weapon or monster name section
+
+
+read in all weapon skills
+read in all monster names/ weapon names per weapon
+
+
+total amount of required materials
+
+
+how to handle multiple areas of input
+
+
+
+
+----------  
+THE FUCKING THING WORKS
+at a base level:
+    get weapon name, attack, affinity, element/ailment
+
+
+
+NEXT UP, display item card with info on mouseover
+THEN, be able to add/ remove from center
+
+when clicked or enter is pressed, weapon selection goes to slot1
+while any piece of equipment is in a slot, click to remove it
+
+
+
+----------------------
+make the fucking tooltip transfer to the 
+
+statements in the placeholder tooltip to add phial type, shelling type/ lvl and ammo?
+
+how does ammo work here - just a list of all ammo?
+
+
+middle tooltip viewer only changes when scrolling through, must add for each search method
