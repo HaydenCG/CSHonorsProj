@@ -79,3 +79,5 @@ how does ammo work here - just a list of all ammo?
 
 
 middle tooltip viewer only changes when scrolling through, must add for each search method
+
+find a way to render sharpness bar in tooltip

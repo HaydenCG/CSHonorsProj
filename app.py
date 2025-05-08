@@ -26,11 +26,16 @@ def get_weapon_data(weapon_type):
         return jsonify(data)
     
     
-@app.route('/weaponSkills/<currentWeapon>')
-def get_weapon_skills(currentWeapon):
-    skillsList = [] #populate with each unique skill in currentWeapon
     
+@app.route('/armor')
+def getArmorCSV():
+    filepath = f"MHWildsCSV/weaponStats/Armor Stats.csv"
     
+    with open(filepath, newline='', encoding='utf-8') as csvfile:
+        rawData = csv.DictReader(csvfile)
+        data = list(rawData)
+        print(data[0]) #example data for debug, first element in list of weapon dicts
+        return jsonify(data)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

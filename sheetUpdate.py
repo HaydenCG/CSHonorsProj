@@ -74,7 +74,8 @@ def update_stat_sheets():
         "Insect Glaive Stats"  :"689340841",
         "Bow Stats" : "2105092355",
         "Heavy Bowgun Stats" : "55061877",
-        "Light Bowgun Stats": "103129807"
+        "Light Bowgun Stats": "103129807",
+        "Armor Stats": "623991243"
     }
     for name, gid in weapon_stat_gids.items(): #for each item adn key in sheets
         url = f"https://docs.google.com/spreadsheets/d/{SPREADSHEET_ID}/export?format=csv&gid={gid}"

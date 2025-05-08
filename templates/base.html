@@ -61,130 +61,171 @@
       <div id="content" class="p-4">
         <div class="container-fluid">
           <h1 class="h3 mb-4 text-gray-800">MHWilds Set Builder </h1>
-
+          
           <div class="row">
+            <!-- weapon/ armor column -->
+            <div class="col-md-4">
+              <ul class="nav nav-tabs mb-4" id="buildTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="weapon-tab" data-toggle="tab" href="#weaponPane" role="tab">Weapon</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="armor-tab" data-toggle="tab" href="#armorPane" role="tab">Armor</a>
+                </li>
+              </ul>
 
-            <!--weapon selecton -->
-            <div class="col-md-4 mb-4">
-              <div class="card shadow h-100 d-flex flex-column">
-                <div class="card-header">
-                  <h6 class="m-0 font-weight-bold text-primary">Weapon</h6>
-              </div>
-                <div class="card-body d-flex flex-column p-3" style="height: 500px;">
-                  <form id="weaponForm" class="d-flex flex-column flex-grow-1 gap-3">
-
-                      <!--  weapon elements + dropdown-->
-                    <select class="form-control" id="weaponDropdown">
-                      <option disabled selected>Select weapon type...</option>
-                      <option>Greatsword</option>
-                      <option>Longsword</option>
-                      <option>Sword and Shield</option>
-                      <option>Dual Blades</option>
-                      <option>Lance</option>
-                  <option>Gunlance</option>
-                      <option>Hammer</option>
-                      <option>Hunting Horn</option>
-                      <option>Switch Axe</option>
-                      <option>Charge Blade</option>
-                      <option>Insect Glaive</option>
-                    <option>Light Bowgun</option>
-                      <option>Heavy Bowgun</option>
-                      <option>Bow</option>
-                    </select>
-
-                    <!-- element/ailment -->
-                 <select class="form-control" id="elementDropdown">
-                      <option disabled selected>Select element/ailment...</option>
-                      <option>Any</option>
-                      <option>Water</option>
-                      <option>Fire</option>
-                    <option>Thunder</option>
-                    <option>Ice</option>
-                    <option>Dragon</option>
-                    <option>Blast</option>
-                      <option>Poison</option>
-                    <option>Paralysis</option>
-                      <option>Sleep</option>
-                    </select>
-
-                    <!--manual skill input -->
-                    <div id="secondSearchContainer" class="d-flex flex-column ">
-                      <input type="text" id="skillSearchBox" class="form-control" placeholder="Search for weapon skills..." />
-                      <div id="secondSuggestions" class="flex-grow-0" style="max-height: 120px; overflow-y: auto;"></div>
+              <div class="tab-content" id="buildTabContent">
+                <div class="tab-pane fade show active" id="weaponPane" role="tabpanel">
+                  <div class="card shadow h-100 d-flex flex-column">
+                    <div class="card-header">
+                      <h6 class="m-0 font-weight-bold text-primary">Weapon Search</h6>
                     </div>
+                    <div class="card-body d-flex flex-column p-3" style="height: 500px;">
+                      <form id="weaponForm" class="d-flex flex-column flex-grow-1 gap-3">
+                        <select class="form-control" id="weaponDropdown">
 
-                      <!--monster, weapon name -->
-                    <div id="autofillContainer" class="d-flex flex-column flex-grow-1 " style="display:none; min-height: 0;">
-                      <input type="text" id="searchBox" class="form-control" placeholder="Search by weapon name..." />
-                      
-                      <!--also contains suggestions output box-->
-                      <div id="suggestions" class="flex-grow-1 overflow-auto border rounded p-2 bg-light" style="min-height: 0;"></div>
+                          <option disabled selected>Select weapon type...</option>
+                          <option>Greatsword</option>
+                          <option>Longsword</option>
+                          <option>Sword and Shield</option>
+                          <option>Dual Blades</option>
+                          <option>Lance</option>
+                          <option>Gunlance</option>
+                          <option>Hammer</option>
+                          <option>Hunting Horn</option>
+                          <option>Switch Axe</option>
+                          <option>Charge Blade</option>
+                          <option>Insect Glaive</option>
+                          <option>Light Bowgun</option>
+                          <option>Heavy Bowgun</option>
+                          <option>Bow</option>
+                        </select>
+
+                        <select class="form-control" id="elementDropdown">
+                          <option disabled selected>Select element/ailment...</option>
+                          <option>Any</option>
+                          <option>Water</option>
+                          <option>Fire</option>
+                          <option>Thunder</option>
+                          <option>Ice</option>
+                          <option>Dragon</option>
+                          <option>Blast</option>
+                          <option>Poison</option>
+                          <option>Paralysis</option>
+                          <option>Sleep</option>
+                        </select>
+
+                        <div id="secondSearchContainer" class="d-flex flex-column">
+                          <input type="text" id="skillSearchBox" class="form-control" placeholder=" Search for weapon skills..." />
+                          <div id="secondSuggestions" class="flex-grow-0" style="max-height: 120px; overflow-y: auto;"></div>
+                        </div>
+
+                        <div id="autofillContainer" class="d-flex flex-column flex-grow-1" style="display:none; min-height: 0;">
+                          <input type="text" id="searchBox" class="form-control" placeholder=" Search by weapon name..." />
+                          <div id="suggestions" class="flex-grow-1 overflow-auto border rounded p-2 bg-light" style="min-height: 0;"></div>
+                        </div>
+                      </form>
                     </div>
-
-                  </form>
+                  </div>
                 </div>
-              </div>
+                <div class="tab-pane fade" id="armorPane" role="tabpanel">
+                  <div class="card shadow">
+                    <div class="card-header">
+                    </div>
+
+                    <div class="card-body d-flex flex-column p-3" style="height: 500px;">
+                        <h6 class="m-0 font-weight-bold text-primary">Armor Search</h6>
+
+                            <select class="form-control" id="armorDropdown">
+                          <form id="armorForm" class="d-flex flex-column flex-grow-1 gap-3">
+
+
+                          <option disabled selected>Select armor type...</option>
+                          <option>Head</option>
+                          <option>Chest</option>
+                          <option>Arms</option>
+                          <option>Waist</option>
+                          <option>Legs</option>
+                          <option>Talisman</option>
+                        
+                        </select>
+
+                         <div id="armorSearchContainer" class="d-flex flex-column">   
+                          <input type="text" id="armorskillSearchBox" class="form-control" placeholder=" Search for armor skills..." />
+                          <div id="armorSkillSuggestions" class="flex-grow-0" style="max-height: 120px; overflow-y: auto;"></div>
+                        </div>
+
+                        <div id="armorAutofillContainer" class="d-flex flex-column flex-grow-1" style="display:none; min-height: 0;">
+                          <input type="text" id="armorNameSearchBox" class="form-control" placeholder=" Search by armor name..." />
+                          <div id="armorNameSuggestions" class="flex-grow-1 overflow-auto border rounded p-2 bg-light" style="height:500px ;"></div>
+                        </div>
+
+                      </form>
+                         
+
+
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- End tab-content -->
             </div>
 
-            <!--centerloadout-->
-              <div class="col-md-4 mb-4">
+            <!-- loadout card -->
+            <div class="col-md-4">
               <div class="card shadow h-100">
                 <div class="card-header">
                   <h6 class="m-0 font-weight-bold text-primary">Current Loadout</h6>
                 </div>
                 <div class="card-body">
-                <div class="d-flex flex-column gap-2">
-
-                    {% for i in range(7) %} 
-                    <!--makes 7 loadout slots-->
-                    <div class="border p-3 rounded mb-2 text-center bg-light slot-box" style="cursor:pointer;" id = "loadoutSlot{{i}}">
-                      Slot {{ i }}
-                    </div>
-                    {% endfor %}
+                  {% for i in range(7 ) %}
+                  <div class="border p-3 rounded mb-2 text-center bg-light slot-box" style="cursor:pointer;" id="loadoutSlot{{i}}">
+                    Slot {{ i }}
                   </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
 
-            <!--will display total skills from weapons, armor-->
-            <div class="col-md-4 mb-4">
-
+            <!-- Right Column (Skills) -->
+            <div class="col-md-4">
               <div class="card shadow h-100">
-
                 <div class="card-header">
                   <h6 class="m-0 font-weight-bold text-primary">Current Armor/ Weapon Skills</h6>
                 </div>
-
                 <div class="card-body">
                   <p class="text-muted">Skill List</p>
                 </div>
               </div>
             </div>
 
-          </div>
-        </div>
+          </div> 
+
+        </div> 
       </div>
     </div>
-  </div>
+  </div> 
 
-  <!--weapon stats hover not curently  functional -->
   <div id="hoverPreview" class="preview-card"></div>
+</body>
+</html>
 
   <!--bootstra  scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery.easing/jquery.easing.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@latest/js/sb-admin-2.min.js"></script>
-<!-- inside <script> tag -->
 <script>
 
   // get weapon suggestions from fields some sort of event listener applied to each
   let weaponSuggestions = [];
-
+  
   // gotta retrieve weapon details based on suggestions
   const skillSuggestions = [];
   let csvData = [];
   let skillsData = []
+
+  let armorSkillSuggestionsData = [];
+  let armorCSVData = []
 
   const weaponSlot = document.getElementById("loadoutSlot0") //weapon slot in loadout card
 
@@ -193,13 +234,118 @@
 
   const searchBox = document.getElementById("searchBox");
 
-  const suggestionsBox = document.getElementById("suggestions");
   const autofillContainer = document.getElementById("autofillContainer");
 
   const hoverPreview = document.getElementById("hoverPreview");
 
   const skillsBox = document.getElementById("skillSearchBox");
+
+  const suggestionsBox = document.getElementById("suggestions");
   const secondSuggestionsBox = document.getElementById("secondSuggestions");
+
+
+  const armorDropdown = document.getElementById("armorDropdown");
+  const armorSkillSuggestions = document.getElementById("armorSkillSuggestions");
+  const armorNameSuggestions = document.getElementById("armorNameSuggestions");
+
+
+  //an embarrassing amount of time was spent trying this only to realize the names are different
+  const armorTypeMap = {
+  "Head": "HELM",
+  "Chest": "BODY",
+  "Arms": "ARM",
+  "Waist": "WAIST",
+  "Legs": "LEG",
+  "Talisman": "CHARM"
+};
+
+const armorSlotMap = {
+  "Head" : 1,
+  "Chest" : 2,
+  "Arms": 3,
+  "Waist": 4,
+  "Legs": 5,
+  "Talisman" : 6
+}
+
+
+function attachTooltipEventsArmor(item) {
+  item.addEventListener("mouseover", (event) => {
+    const armor = armorCSVData.find(a => a.Name === item.textContent);
+    if (!armor) return;
+
+    hoverPreview.innerHTML = `
+      <strong>${armor["Name"]}</strong><br/>
+      Type: ${armor["Type"]}</br>
+      Defense: ${armor["Defense"]}</br>
+      Fire Res: ${armor["Fire Res"]}</br>
+      Water Res: ${armor["Water Res"]}</br>
+      Thunder Res: ${armor["Thunder Res"]}</br>
+      Ice Res: ${armor["Ice Res"]}</br>
+      Dragon Res: ${armor["Dragon Res"]}</br>
+      Skill 1: ${armor["Skill 1"] ? armor["Skill 1"] + " (lv: " + armor["Skill Level 1"] + ")" : "_"}<br/>  
+      Skill 2: ${armor["Skill 2"] ? armor["Skill 2"] + " (lv: " + armor["Skill Level 2"] + ")" : "_"}<br/>
+      Skill 2: ${armor["Skill 3"] ? armor["Skill 3"] + " (lv: " + armor["Skill Level 3"] + ")" : "_"}<br/>
+
+      Slots: ${armor["Slot 1"]},${armor["Slot 2"]},${armor["Slot 3"]}
+    `;
+
+    hoverPreview.style.display = "block";
+    hoverPreview.style.left = `${event.pageX + 10}px`;
+    hoverPreview.style.top = `${event.pageY + 10}px`;
+  });
+
+  item.addEventListener("mouseout", () => {
+    hoverPreview.style.display = "none";
+  });
+}
+
+armorDropdown.addEventListener("change", () => {
+  const selected = armorDropdown.value;
+  const internalType = armorTypeMap[selected];
+  const slotNumber = armorSlotMap[selected]
+
+  fetch(`/armor`)
+    .then(response => response.json())
+    .then(data => {
+      armorCSVData = data;
+
+
+
+        //filters on armor type
+      const filtered = data.filter(entry => entry.Type === internalType);
+      armorSuggestions = filtered.map(entry => entry.Name).filter(Boolean);
+
+      if (armorSuggestions.length) {
+        armorNameSuggestions.innerHTML = armorSuggestions
+          .map(name => `<div class="suggestion">${name}</div>`)
+          .join("");
+      } else {
+        armorNameSuggestions.innerHTML = "<small>No armor found for this type.</small>";
+      }
+
+      document.querySelectorAll("#armorNameSuggestions .suggestion").forEach(item => {
+        item.onclick = () => {
+          armorNameSearchBox.value = item.textContent;
+          const armorSlot = document.getElementById(`loadoutSlot${slotNumber}`);
+          armorSlot.innerHTML = "";
+          armorSlot.appendChild(item.cloneNode(true));
+          attachTooltipEventsArmor(armorSlot.firstChild);
+          armorNameSuggestions.innerHTML = "";
+        };
+        attachTooltipEventsArmor(item);
+      });
+    });
+});
+
+
+
+
+
+
+
+
+//weapon stuff below
 
   //adds hovering tooltip stuff when mouseover triggered
 function attachTooltipEvents(item) {
@@ -209,9 +355,10 @@ function attachTooltipEvents(item) {
 
     hoverPreview.innerHTML = `
       <strong>${weapon["Name"]}</strong><br/>
+      Rarity: ${weapon["Rarity"]}</br>
       Attack: ${weapon["Attack"]}</br>
       Affinity: ${weapon["Affinity"]}</br>
-      Element: ${weapon["Attribute"]}</br>
+      Element: ${weapon["Attribute"] || "_"}</br>
       Skill 1: ${weapon["Skill 1"] ? weapon["Skill 1"] + " (lv: " + weapon["Skill 1 Lv"] + ")" : "_"}<br/>  
       Skill 2: ${weapon["Skill 2"] ? weapon["Skill 2"] + " (lv: " + weapon["Skill 2 Lv"] + ")" : "_"}<br/>
 
@@ -230,9 +377,14 @@ function attachTooltipEvents(item) {
 
 
 
+
+
+
+
   weaponDropdown.addEventListener("change", () => { //upon weapon change~
 
   elementDropdown.selectedIndex = 0;
+  skillsBox.value = ""
     
   autofillContainer.style.display = "flex";
 
@@ -316,10 +468,13 @@ function attachTooltipEvents(item) {
 
 
     item.onclick = () => {
-      searchBox.value = item.textContent;
-      loadoutSlot0.innerHTML = `<strong>${item.textContent}</strong>`;
-      suggestionsBox.innerHTML = "";
-      hoverPreview.style.display = "none";
+    searchBox.value = item.textContent;
+    loadoutSlot0.innerHTML = ""; 
+    loadoutSlot0.appendChild(item.cloneNode(true)); 
+    attachTooltipEvents(loadoutSlot0.firstChild);   
+    suggestionsBox.innerHTML = "";
+    hoverPreview.style.display = "none";
+      
 
     };
       attachTooltipEvents(item); 
@@ -355,9 +510,13 @@ function attachTooltipEvents(item) {
         searchBox.value = item.textContent;
         loadoutSlot0.innerHTML = `<strong>${item.textContent}</strong>`;
         suggestionsBox.innerHTML = "";
+        attachTooltipEvents(loadoutSlot0.firstChild); //attaches teh tooltip
         hoverPreview.style.display = "none";
 
+
       };
+        attachTooltipEvents(item); 
+
     });
   });
   
@@ -389,6 +548,8 @@ function attachTooltipEvents(item) {
         loadoutSlot0.innerHTML = `<strong>${item.textContent}</strong>`;
         suggestionsBox.innerHTML = "";
         hoverPreview.style.display = "none";
+        attachTooltipEvents(loadoutSlot0.firstChild); //attaches teh tooltip
+
 
       };
         attachTooltipEvents(item);
