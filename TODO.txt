@@ -56,7 +56,6 @@ how to handle multiple areas of input
 
 
 ----------  
-THE FUCKING THING WORKS
 at a base level:
     get weapon name, attack, affinity, element/ailment
 
@@ -71,7 +70,6 @@ while any piece of equipment is in a slot, click to remove it
 
 
 ----------------------
-make the fucking tooltip transfer to the 
 
 statements in the placeholder tooltip to add phial type, shelling type/ lvl and ammo?
 
